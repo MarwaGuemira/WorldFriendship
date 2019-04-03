@@ -141,7 +141,7 @@ public class AffichagePubController implements Initializable {
  mespub.setOnAction(event -> {
 
             try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/MesPubs.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/AjouterPublicites.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);

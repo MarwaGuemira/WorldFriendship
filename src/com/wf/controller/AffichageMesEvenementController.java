@@ -69,6 +69,7 @@ public class AffichageMesEvenementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
           modifier.setDisable(true);
+          
         // TODO
                  eveTable.setItems(listdata.getUsers2());
               setCellValue();

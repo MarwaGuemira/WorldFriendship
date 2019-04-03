@@ -7,6 +7,7 @@ package com.wf.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.wf.entity.Evenement;
+import com.wf.entity.Pub;
 import com.wf.service.EvenementService;
 import java.io.IOException;
 import java.net.URL;
@@ -15,10 +16,13 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -36,6 +40,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
@@ -74,7 +79,8 @@ public class AffichageEvenementController implements Initializable {
     private TextField nomLabel;
     @FXML
     private TextField descLabel;
-   
+       @FXML
+    private TextField search2;
       @FXML
     private JFXButton btmeseve;
     @FXML
@@ -142,7 +148,8 @@ public class AffichageEvenementController implements Initializable {
         }); 
         
                      
-    }   
+    }  
+    
     
 //        @FXML
     public void enable()
@@ -286,6 +293,29 @@ public class AffichageEvenementController implements Initializable {
 //
 //        eveTable.setItems(listViewEvenement);
 //    }
+    
+         FilteredList<Evenement> filter = new FilteredList<>(listdata.getUsers(), e -> true);   
+    @FXML
+    private void search2(KeyEvent evloent4) {
+       
+       search2.textProperty().addListener((observable,oldValue,newValue) -> {
+           filter.setPredicate((Predicate<? super Evenement>) (Evenement Evenement)->{
+           
+             if(newValue.isEmpty() || newValue==null){
+                 return true;
+             }
+             else if((Evenement.getNomevenement().contains(newValue)) || (Evenement.getNomevenement().toLowerCase().contains(newValue))){
+                 return true;
+             }
+           return false;
+           });
+           
+       });
+       SortedList sort=new SortedList(filter);
+       sort.comparatorProperty().bind(eveTable.comparatorProperty());
+      eveTable.setItems(sort);
+    }
+    
 
     }
     

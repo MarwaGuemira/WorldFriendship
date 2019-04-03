@@ -11,7 +11,7 @@
 <AnchorPane id="AnchorPane" prefHeight="705.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wf.controller.AccueilController">
   
     <children>
-        <ImageView fitHeight="738.0" fitWidth="778.0" layoutX="-4.0" layoutY="13.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.78" pickOnBounds="true">
+        <ImageView fitHeight="751.0" fitWidth="804.0" layoutX="4.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.78" pickOnBounds="true">
          <image>
             <Image url="@../../../images/bg.jpg" />
          </image>
@@ -89,9 +89,5 @@
             <Image url="@../../../images/logofs.png" />
          </image>
       </ImageView>
-      <Pane layoutX="6.0" layoutY="-6.0" prefHeight="30.0" prefWidth="778.0" style="-fx-background-color: #cef4e3;" />
-      <Pane layoutX="1.0" layoutY="-2.0" prefHeight="755.0" prefWidth="26.0" style="-fx-background-color: #cef4e3;" />
-      <Pane layoutX="760.0" layoutY="-18.0" prefHeight="750.0" prefWidth="26.0" style="-fx-background-color: #cef4e3;" />
-      <Pane layoutY="725.0" prefHeight="30.0" prefWidth="786.0" style="-fx-background-color: #cef4e3;" />
    </children>
 </AnchorPane>

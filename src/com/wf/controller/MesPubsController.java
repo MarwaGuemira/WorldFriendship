@@ -102,9 +102,9 @@ public class MesPubsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-  
+      //  modifier.setDisable(false);
          userTable.setItems(listdata2.getUsers2());
-
+              setCellValue();
                    colId.setCellValueFactory(new PropertyValueFactory<>("idpublicite"));
                 colNom.setCellValueFactory(new PropertyValueFactory<>("nompublicite"));
                 coldesc.setCellValueFactory(new PropertyValueFactory<>("contenupublicte"));
@@ -128,8 +128,7 @@ public class MesPubsController implements Initializable {
                 .getContenupublicte());
                      });
         
-                    setCellValue();
-                         modifier.setDisable(true);
+      
         // TODO
         // TODO
     }  
@@ -144,7 +143,7 @@ public class MesPubsController implements Initializable {
                 idLabel.setText(Integer.toString(pl.getIdpublicite()));
                 nomLabel.setText(pl.getNompublicite());
                 descLabel.setText((pl.getContenupublicte()));
-                modifier.setDisable(false);
+                //modifier.setDisable(false);
                 
         
             }});
