@@ -17,5 +17,5 @@ public interface IService<T> {
     public List<T> displayAll();
     public T displayById(int id);
     
-    public void update(T os);
+    public boolean update(T os);
 }

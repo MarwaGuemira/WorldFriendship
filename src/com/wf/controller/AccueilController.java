@@ -35,9 +35,8 @@ public class AccueilController implements Initializable {
     private Stage primaryStage;
     @FXML
     private Button onbt;
-    @FXML
-    private Button onbt1;
-//    
+       @FXML
+    private Button onbt2;
 //    
 //    @FXML
 //    private void handleButtonAction(ActionEvent event )throws IOException{
@@ -55,7 +54,7 @@ public class AccueilController implements Initializable {
         onbt.setOnAction(event -> {
 
             try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/Ajout.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/AffichageEvenement.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -66,10 +65,10 @@ public class AccueilController implements Initializable {
             }
         }); 
         
-        onbt1.setOnAction(event -> {
+        onbt2.setOnAction(event -> {
 
             try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/AjouterProduit.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("/com/wf/controller/MesPubs.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -79,7 +78,6 @@ public class AccueilController implements Initializable {
                 Logger.getLogger(AccueilController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }); 
-        
         
         // TODO
     }    

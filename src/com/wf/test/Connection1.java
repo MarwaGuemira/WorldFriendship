@@ -5,9 +5,6 @@
  */
 package com.wf.test;
 
-import com.wf.entity.Produit;
-import com.wf.service.ProduitService;
-import java.time.LocalDate;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,7 +23,7 @@ public class Connection1 extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-Parent root =FXMLLoader.load(getClass().getResource("/com/wf/controller/AfficherProduit.fxml"));
+Parent root =FXMLLoader.load(getClass().getResource("/com/wf/controller/LoginFXML.fxml"));
 Scene scene = new Scene(root);
 primaryStage.setScene(scene);
 primaryStage.show();
@@ -35,7 +32,7 @@ primaryStage.show();
     /**
      * @param args the command line arguments
      */
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         launch(args);
     }
     

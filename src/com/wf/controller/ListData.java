@@ -5,27 +5,46 @@
  */
 package com.wf.controller;
 
-import com.wf.entity.Produit;
-import com.wf.service.ProduitService;
+import com.wf.entity.Evenement;
+import com.wf.entity.Utilisateur;
+import com.wf.service.EvenementService;
 import com.wf.service.User1Service;
+import java.sql.SQLException;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
  *
- * @author ihebm
+ * @author Marwa
  */
-public class ListData {
-        private ObservableList<Produit> users=FXCollections.observableArrayList();
-
+class ListData {
+     private ObservableList<Evenement>  events=FXCollections.observableArrayList();
+ private ObservableList<Evenement>  events1=FXCollections.observableArrayList();
     public ListData() {
+        Utilisateur user = LoginFXMLController.CurrentUser;
+        int id = user.getId();
+        EvenementService pdao= EvenementService.getInstance();
+          EvenementService pdao1= EvenementService.getInstance();
+         events= (ObservableList<Evenement>) pdao.displayAll();
+        System.out.println( events);
         
-        ProduitService pdao= ProduitService.getInstance();
-        users= (ObservableList<Produit>) pdao.displayAll();
-        System.out.println(users);
+          events1= (ObservableList<Evenement>) pdao1.displayAllListbyorganisateur(id);
+        System.out.println( events1);
+    }
+     public ObservableList<Evenement> getUsers(){
+        return events;
+    } 
+    public ObservableList<Evenement> getUsers1(){
+        events.clear();
+      
+        return events;
+    }
+      public ObservableList<Evenement> getUsers2(){
+        return events1;
+    } 
+
     }
     
-    public ObservableList<Produit> getUsers(){
-        return users;
-    }
-}
+    
+

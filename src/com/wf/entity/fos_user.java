@@ -35,6 +35,7 @@ public class fos_user {
         this.nom = nom;
         this.prenom = prenom;
         this.numero_tel = numero_tel;
+   
     }
 
     public fos_user(String nom, String prenom) {
